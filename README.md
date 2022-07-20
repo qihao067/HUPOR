@@ -1,4 +1,4 @@
-# ORNet: Boosting Multi-person 3D Human Pose Estimation by Occluded Joints Reasoning
+# Explicit Occlusion Reasoning for Multi-person 3D Human Pose Estimation
 The code in this file is used to reproduce the results in Table 1 (Comparisons with SOTA methods on MuPoTS-3D), and the ablation results of each module.
 
 Note that the detection module and the reasoning module can be trained together since different losses are added to these two modules separately and the update of the reasoning module does not affect the training of the detection module. In our experiments, the detection module converges first and then the reasoning module converges after about 2-3 epochs.
