@@ -132,7 +132,7 @@ def generate_relZ(pred_bodys, paf_3d_upsamp, root_d_upsamp, scale, num_intermed_
     depth_v = np.zeros((len(pred_bodys), NUM_LIMBS), dtype=np.float)
     depth_roots_pred = np.zeros(len(pred_bodys), dtype=np.float)
     for i, pred_body in enumerate(pred_bodys):
-        if pred_body[root_n][3] > 0: # 如果score大于0
+        if pred_body[root_n][3] > 0:
             scores = 0.0
             depth_temp = 0.0
             if pred_body[root_n][3] > 3:
@@ -146,7 +146,7 @@ def generate_relZ(pred_bodys, paf_3d_upsamp, root_d_upsamp, scale, num_intermed_
                         depth_temp_out = depth_temp / scores
                     else:
                         depth_temp_out = root_d_upsamp[root_n][int(pred_body[root_n][1]), int(pred_body[root_n][0])]
-            '''
+            '''# TODO: need to update. Now the naive solution is used.
             for m in range(len(joints_list)):
                 if pred_body[joints_list[m]][3] > 2:
                     depth_temp += pred_body[joints_list[m]][3] * root_d_upsamp[m][int(pred_body[joints_list[m]][1]), int(pred_body[joints_list[m]][0])]
